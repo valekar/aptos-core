@@ -288,7 +288,7 @@ module aptos_framework::coin {
         register<CoinType>(account)
     }
 
-    public(friend) fun register<CoinType>(account: &signer) {
+    public fun register<CoinType>(account: &signer) {
         let account_addr = signer::address_of(account);
         assert!(
             !is_account_registered<CoinType>(account_addr),
